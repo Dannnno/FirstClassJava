@@ -41,3 +41,19 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# eclipse specific git ignore
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
