@@ -5,7 +5,7 @@ package hof.test;
 
 import static org.junit.Assert.*;
 import hof.Functor;
-import hof.Incrementor;
+import hof.Summer;
 import hof.Reduce;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import org.junit.Test;
  */
 public class ReduceTest {
 	
-	static Functor function = new Incrementor();
+	static Functor function = new Summer();
 	static Object[] testArray = { 1, 2, 3, 4 };
 	static ArrayList<Object> testList = new ArrayList<Object>();
 	static HashMap<Object, Object> testMap = new HashMap<Object, Object>();

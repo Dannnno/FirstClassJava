@@ -1,4 +1,9 @@
 package hof;
+
+import java.util.Arrays;
+import java.util.Collections;
+
+
 public class Adder extends Functor {
 
 	public Object run(Object... objects) {
@@ -7,6 +12,6 @@ public class Adder extends Functor {
 	
 	public static void main(String[] args) {
 		Integer[] i = { 1, 2, 3, 4 };
-		HigherOrderFunctions.printArray(MapF.map(new Adder(), i));
+		System.out.println(Arrays.toString(MapF.map(new Adder(), i)));
 	}
 }

@@ -1,5 +1,8 @@
 package hof;
+import hof.tools.ArrayTools;
+import hof.tools.IterableTools;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -59,10 +62,10 @@ public class Reduce {
 	 * to make an array out of it.
 	 */
 	public static Object foldr(Functor function, Iterable<Object> obj) {
-		return foldr(function, HigherOrderFunctions.iterableAsArray(obj));
+		return foldr(function, ArrayTools.toArray((Collection<Object>) obj));
 	}
 
 	public static Object foldl(Functor function, Iterable<Object> obj) {
-		return foldl(function, HigherOrderFunctions.iterableAsArray(obj));
+		return foldl(function, ArrayTools.toArray(obj));
 	}
 }

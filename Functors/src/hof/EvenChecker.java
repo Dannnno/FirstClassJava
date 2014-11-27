@@ -1,4 +1,8 @@
 package hof;
+
+import java.util.Arrays;
+
+
 /**
  * 
  */
@@ -20,7 +24,7 @@ public class EvenChecker extends Functor {
 	 */
 	public static void main(String[] args) {
 		Integer[] i = { 1, 2, 3, 4 };
-		HigherOrderFunctions.printArray(Filter.filter(new EvenChecker(), i));
+		System.out.println(Arrays.toString(Filter.filter(new EvenChecker(), i)));
 
 	}
 
