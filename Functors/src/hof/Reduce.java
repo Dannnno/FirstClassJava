@@ -1,6 +1,5 @@
 package hof;
 import hof.tools.ArrayTools;
-import hof.tools.IterableTools;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;

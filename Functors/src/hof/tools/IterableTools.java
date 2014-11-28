@@ -1,26 +1,24 @@
 package hof.tools;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 
 public class IterableTools {
 
 	
-	public static List<Object> toCollection(Iterable<Object> iterable) {
-		List<Object> retList = new ArrayList<Object>();
-		for(Object o: iterable) {
-			retList.add(o);
+	public static Iterable<Object> toIterable(Collection<Object> obj) {
+		List<Object> retIterable = new ArrayList<Object>();
+		for(Object o: obj) {
+			retIterable.add(o);
 		}
-		return retList;
+		return retIterable;
 	}
 	
-	public static List<Object> toCollection(Object[] objArray) {
-		List<Object> retList = new ArrayList<Object>();
-		for(Object o: objArray) {
-			retList.add(o);
-		}
-		return retList;
+	public static Iterable<Object> toIterable(Object[] obj) {
+		return Arrays.asList(obj);
 	}
 	
 }

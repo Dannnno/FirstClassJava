@@ -38,6 +38,8 @@ public class ReduceTest {
 	@Test
 	public final void testFoldrFunctorObjectObjectArray() {
 		assertEquals((Integer) 10, Reduce.foldr(function, 0, testArray));
+		Object[] valArray = { 1, 2, 3, 4 };
+		assertArrayEquals(testArray, valArray);
 	}
 
 	/**
