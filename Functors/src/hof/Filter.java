@@ -6,46 +6,46 @@ import java.util.Map;
 
 public class Filter {
 
-	public static Object[] filter(Functor function, Object[] obj) {
+	public static Object[] filter(Predicate predicate, Object[] obj) {
 		List<Object> filteredList = new ArrayList<Object>();
 		for (int i = 0; i < obj.length; i++) {
-			if ((Boolean) function.run(obj[i])) {
+			if (predicate.run(obj[i])) {
 				filteredList.add(obj[i]);
 			}
 		}
 		return filteredList.toArray();
 	}
 
-	public static List<Object> filter(Functor function, Iterable<Object> obj) {
+	public static List<Object> filter(Predicate predicate, Iterable<Object> obj) {
 		List<Object> filteredList = new ArrayList<Object>();
 		for (Object o : obj) {
-			if ((Boolean) function.run(o)) {
+			if (predicate.run(o)) {
 				filteredList.add(o);
 			}
 		}
 		return filteredList;
 	}
 
-	private static Map<Object, Object> filter(Functor function,
+	private static Map<Object, Object> filter(Predicate predicate,
 			Map<Object, Object> obj) {
 		Map<Object, Object> retMap = new Hashtable<Object, Object>();
 		for (Map.Entry<Object, Object> entry : obj.entrySet()) {
-			if ((Boolean) function.run(entry.getKey(), entry.getValue())) {
+			if (predicate.run(entry.getKey(), entry.getValue())) {
 				retMap.put(entry.getKey(), entry.getValue());
 			}
 		}
 		return retMap;
 	}
 
-	public static Map<Object, Object> filter(Functor function,
+	public static Map<Object, Object> filter(Predicate predicate,
 			Map<Object, Object> obj, boolean twoArgs) {
 		if (twoArgs) {
-			return filter(function, obj);
+			return filter(predicate, obj);
 		} else {
 			Map<Object, Object> retMap = new Hashtable<Object, Object>();
 			for (Map.Entry<Object, Object> entry : obj.entrySet()) {
-				if ((Boolean) function.run(entry.getKey())
-						&& (Boolean) function.run(entry.getValue())) {
+				if (predicate.run(entry.getKey())
+						&& (Boolean) predicate.run(entry.getValue())) {
 					retMap.put(entry.getKey(), entry.getValue());
 				}
 			}
@@ -53,22 +53,22 @@ public class Filter {
 		}
 	}
 
-	public static Map<Object, Object> kFilter(Functor function,
+	public static Map<Object, Object> kFilter(Predicate predicate,
 			Map<Object, Object> obj) {
 		Map<Object, Object> retMap = new Hashtable<Object, Object>();
 		for (Map.Entry<Object, Object> entry : obj.entrySet()) {
-			if ((Boolean) function.run(entry.getKey())) {
+			if (predicate.run(entry.getKey())) {
 				retMap.put(entry.getKey(), entry.getValue());
 			}
 		}
 		return retMap;
 	}
 
-	public static Map<Object, Object> vFilter(Functor function,
+	public static Map<Object, Object> vFilter(Predicate predicate,
 			Map<Object, Object> obj) {
 		Map<Object, Object> retMap = new Hashtable<Object, Object>();
 		for (Map.Entry<Object, Object> entry : obj.entrySet()) {
-			if ((Boolean) function.run(entry.getValue())) {
+			if (predicate.run(entry.getValue())) {
 				retMap.put(entry.getKey(), entry.getValue());
 			}
 		}

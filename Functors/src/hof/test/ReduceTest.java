@@ -5,7 +5,6 @@ package hof.test;
 
 import static org.junit.Assert.*;
 import hof.Functor;
-import hof.Summer;
 import hof.Reduce;
 
 import java.util.ArrayList;
@@ -18,6 +17,15 @@ import org.junit.Test;
  * 
  */
 public class ReduceTest {
+	
+	public static class Summer extends Functor{
+
+		@Override
+		public Object run(Object... args) {
+			return (Integer) args[0] + (Integer) args[1];
+		}
+
+	}
 	
 	static Functor function = new Summer();
 	static Object[] testArray = { 1, 2, 3, 4 };

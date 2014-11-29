@@ -3,7 +3,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import hof.Adder;
 import hof.Functor;
 import hof.MapF;
 
@@ -19,6 +18,14 @@ import java.util.HashMap;
  * 
  */
 public class MapFTest {
+	
+	public static class Adder extends Functor {
+
+		@Override
+		public Object run(Object... objects) {
+			return (Integer) objects[0] + new Integer(1);
+		}
+	}
 
 	static Functor function = new Adder();
 	static Object[] testArray = { 1, 2, 3, 4 };

@@ -2,6 +2,6 @@ package hof;
 
 public abstract class Functor {
 
-	abstract Object run(Object... args);
+	public abstract Object run(Object... args);
 	
 }
