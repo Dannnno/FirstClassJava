@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import hof.StringBuilders;
+import hof.tools.StringBuilders;
 
 import java.util.ArrayList;
 /**
@@ -19,7 +19,7 @@ public class StringBuildersTest {
 	static String expectedString = "Hello, World";
 
 	/**
-	 * Test method for {@link hof.StringBuilders#appendTo(java.lang.StringBuilder, java.lang.Iterable)}.
+	 * Test method for {@link hof.tools.StringBuilders#appendTo(java.lang.StringBuilder, java.lang.Iterable)}.
 	 */
 	@Test
 	public final void testAppendToStringBuilderIterableOfString() {
@@ -32,7 +32,7 @@ public class StringBuildersTest {
 	}
 
 	/**
-	 * Test method for {@link hof.StringBuilders#appendTo(java.lang.StringBuilder, java.lang.String[])}.
+	 * Test method for {@link hof.tools.StringBuilders#appendTo(java.lang.StringBuilder, java.lang.String[])}.
 	 */
 	@Test
 	public final void testAppendToStringBuilderStringArray() {
@@ -43,7 +43,7 @@ public class StringBuildersTest {
 	}
 
 	/**
-	 * Test method for {@link hof.StringBuilders#appendTo(java.lang.StringBuilder, java.lang.String, java.lang.String, java.lang.String[])}.
+	 * Test method for {@link hof.tools.StringBuilders#appendTo(java.lang.StringBuilder, java.lang.String, java.lang.String, java.lang.String[])}.
 	 */
 	@Test
 	public final void testAppendToStringBuilderStringStringStringArray() {

@@ -4,6 +4,10 @@
 package hof.test;
 
 import static org.junit.Assert.*;
+import hof.Appendable;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 import org.junit.Test;
 
@@ -13,35 +17,41 @@ import org.junit.Test;
  */
 public class JoinerTest {
 
+	public static class StringyBuilder extends Appendable<String> {
+
+		public Collection<String> list;
+
+		public StringyBuilder() {
+			this.list = new ArrayList<String>();
+		}
+
+		@Override
+		public void append(String str) {
+			this.list.add(str);
+		}
+	}
+	
 	/**
-	 * Test method for {@link hof.Joiner#Joiner(char)}.
+	 * Test method for {@link hof.Joiner#Joiner(java.lang.Object, hof.Appendable)}.
 	 */
 	@Test
-	public final void testJoinerChar() {
+	public final void testJoinerTAppendableOfT() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	/**
-	 * Test method for {@link hof.Joiner#Joiner(java.lang.String)}.
+	 * Test method for {@link hof.Joiner#Joiner(java.lang.Object, hof.Appendable, java.lang.Object)}.
 	 */
 	@Test
-	public final void testJoinerString() {
+	public final void testJoinerTAppendableOfTT() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	/**
-	 * Test method for {@link hof.Joiner#Joiner(java.lang.String, java.lang.Boolean)}.
+	 * Test method for {@link hof.Joiner#Joiner(java.lang.Object, hof.Appendable, java.lang.Boolean)}.
 	 */
 	@Test
-	public final void testJoinerStringBoolean() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link hof.Joiner#Joiner(java.lang.String, java.lang.String)}.
-	 */
-	@Test
-	public final void testJoinerStringString() {
+	public final void testJoinerTAppendableOfTBoolean() {
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -49,44 +59,36 @@ public class JoinerTest {
 	 * Test method for {@link hof.Joiner#join(java.lang.Iterable)}.
 	 */
 	@Test
-	public final void testJoinIterableOfString() {
+	public final void testJoinIterableOfT() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	/**
-	 * Test method for {@link hof.Joiner#join(java.lang.String[])}.
+	 * Test method for {@link hof.Joiner#join(T[])}.
 	 */
 	@Test
-	public final void testJoinStringArray() {
+	public final void testJoinTArray() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	/**
-	 * Test method for {@link hof.Joiner#join(java.lang.String, java.lang.String, java.lang.String[])}.
+	 * Test method for {@link hof.Joiner#join(java.lang.Object, java.lang.Object, T[])}.
 	 */
 	@Test
-	public final void testJoinStringStringStringArray() {
+	public final void testJoinTTTArray() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	/**
-	 * Test method for {@link hof.Joiner#on(char)}.
+	 * Test method for {@link hof.Joiner#on(java.lang.Object, hof.Appendable)}.
 	 */
 	@Test
-	public final void testOnChar() {
+	public final void testOn() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	/**
-	 * Test method for {@link hof.Joiner#on(java.lang.String)}.
-	 */
-	@Test
-	public final void testOnString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	/**
-	 * Test method for {@link hof.Joiner#skipNulls()}.
+	 * Test method for {@link hof.Joiner#skipNulls(hof.Appendable)}.
 	 */
 	@Test
 	public final void testSkipNulls() {
@@ -94,7 +96,7 @@ public class JoinerTest {
 	}
 
 	/**
-	 * Test method for {@link hof.Joiner#useForNull(java.lang.String)}.
+	 * Test method for {@link hof.Joiner#useForNull(hof.Appendable, java.lang.Object)}.
 	 */
 	@Test
 	public final void testUseForNull() {

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hof;
+package hof.tools;
 
 /**
  * @author Dan
